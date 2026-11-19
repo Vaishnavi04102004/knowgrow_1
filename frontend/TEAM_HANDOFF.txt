@@ -1,0 +1,9 @@
+KNOWGROW FRONTEND HANDOFF
+
+Run: npm install && npm run dev
+
+Demo: Select “Try Demo Workspace” on the login screen. Sample password: demo12345. Register your own demo account to log in with your own email/password. Demo registration allows selecting a role strictly for presentation. Sign in as HR Specialist and use Employee Directory to add/edit synthetic employees and roles.
+
+Live backend: switch to Live Backend Login and configure VITE_API_BASE_URL. See docs/API_CONTRACT.md. Google OAuth and phone OTP need backend provider configuration.
+
+Demo records are browser-local and not secure or shared. Never use demo mode for real employee accounts or production data. Backend must enforce all identity, role and data permissions.

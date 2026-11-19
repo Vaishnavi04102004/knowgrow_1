@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/knowgrow_app?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:knowgrow}
+    password: ${DB_PASSWORD:knowgrow_dev}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+knowgrow:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173}
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-change-me-dev-only-secret-change-me}
+    ttl-hours: 8
+    cookie-secure: ${COOKIE_SECURE:false}
+  seed-demo-users: ${SEED_DEMO_USERS:true}

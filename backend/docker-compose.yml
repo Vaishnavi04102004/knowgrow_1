@@ -1,0 +1,15 @@
+# OPTIONAL: only if you want Docker instead of your installed MySQL.
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: knowgrow_app
+      MYSQL_USER: knowgrow
+      MYSQL_PASSWORD: knowgrow_dev
+      MYSQL_ROOT_PASSWORD: root_dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+volumes:
+  mysqldata:
